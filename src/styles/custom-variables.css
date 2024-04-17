@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: 'Mera Pro', sans-serif;
+    src: url(/src/fonts/merapro-v4oex.otf) format('opentype');
+}
+
+:root {
+    --background-color: #070707;
+    --menu-color: #161616;
+    --font-color: #E2EAEB;
+    --landing-page-orange: #FF6F1D;
+    --about-page-orange: #FC5B00;
+    --works-page-svg-green: #004D47;
+    --works-page-green: #009562;
+    --contact-page-blue: #00A4CC;
+}
