@@ -1,17 +1,35 @@
 import React from "react";
+import svg1 from "../assets/svg/svg-1.png";
+import MenuBar from "../components/Menu";
 
 const LandingPage = () => {
+
+  const scrollTo = (id) => {
+    const section = document.getElementById(id);
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
-    <div className="bg-background text-font min-h-screen flex flex-col items-center justify-center">
-      <h1 className="text-4xl font-bold text-landing-page-orange font-urbanist">
-        Welcome to Our Website!
-      </h1>
-      <p className="mt-4 text-xl font-mera">
-        Discover our services and offers.
-      </p>
-      <button className="mt-8 px-6 py-2 rounded bg-about-page-orange text-white hover:bg-landing-page-orange transition-colors">
-        Get Started
-      </button>
+    <div className="bg-background min-h-screen text-font font-urbanist relative overflow-y-hidden">
+      <div className="flex items-center absolute text-font font-mera rotate-90 -ml-28rem mt-28rem text-3xl">
+        <h3>WEB DEVELOPER &#160; &#160; WEB DESIGNER</h3>
+      </div>
+      <div>
+        <div className="flex justify-start items-center h-full absolute top-0 left-20">
+          <img src={svg1} alt="svg logo" className="mb-16 ml-8"/>
+          <div className="font-mera flex justify-start items-center h-full absolute top-0 left-20">
+            <h2 className="text-8xl">ELIZADOLTU</h2>
+            <p className="text-3xl mb-20">TM</p>
+          </div>
+          <p className="text-3xl w-30rem mt-60 -ml-16">hi, there! my name is eliza and i am a student and frontend developer.</p>
+        </div>
+        
+      </div>
+      <div className="border border-font absolute w-445px h-665px -rotate-25 ml-28 -mt-24"></div>
+      <div className="border border-font absolute w-445px h-665px -rotate-25 mt-20rem -ml-56"></div>
+      <div className="border border-font absolute w-445px h-665px -rotate-25 mt-35rem ml-26rem"></div>
+
+      <MenuBar scrollTo={scrollTo}/>
     </div>
   );
 };

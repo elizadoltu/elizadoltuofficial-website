@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'selector',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -18,8 +19,24 @@ export default {
       },
       fontFamily: {
         'urbanist': ['Urbanist', 'sans-serif'], 
-        'mera': ['"Mera Pro"', 'sans-serif'] 
-      }
+        'mera': ['Mera Pro', 'sans-serif'] 
+      },
+      spacing: {
+        '28rem' : '28rem',
+        '20rem' : '20rem',
+        '35rem' : '35rem',
+        '26rem' : '26rem',
+      },
+      width: {
+        '30rem' : '30rem',
+        '445px' : '445px'
+      },
+      height: {
+        '665px' : '665px'
+      },
+      rotate: {
+        '25' : '25deg'
+      },
     },
   },
   plugins: [],
