@@ -26,6 +26,12 @@ export default {
         '20rem' : '20rem',
         '35rem' : '35rem',
         '26rem' : '26rem',
+        '43rem' : '43rem',
+        '64rem' : '64rem',
+        '40rem' : '40rem',
+        '61.5rem' : '61.5rem',
+        '83rem' : '83rem',
+        '14rem' : '14rem'
       },
       width: {
         '30rem' : '30rem',
