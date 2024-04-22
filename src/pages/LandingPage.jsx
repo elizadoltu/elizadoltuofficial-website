@@ -1,17 +1,11 @@
 import React from "react";
 import svg1 from "../assets/svg/svg-1.png";
-import MenuBar from "../components/Menu";
 import ProfilePicture1 from "../assets/png/profile-picture-1.png";
 import ProfilePicture2 from "../assets/png/profile-picture-2.png";
 import LandingPicture1 from "../assets/png/landing-page-1.png";
 import LandingPicture2 from "../assets/png/landing-page-2.png";
 
 const LandingPage = () => {
-
-  const scrollTo = (id) => {
-    const section = document.getElementById(id);
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
 
   return (
     <div className="bg-background min-h-screen text-font font-urbanist relative overflow-y-hidden">
@@ -36,7 +30,6 @@ const LandingPage = () => {
       <img src={ProfilePicture1} alt="profile picture 2 of Eliza Doltu" className="absolute -rotate-25 ml-61.5rem mt-40rem"/>
       <img src={LandingPicture2} alt="Abstract photo 1" className="absolute -rotate-25 ml-43rem"/>
       <img src={LandingPicture1} alt="Abstract photo 2" className="absolute -rotate-25 ml-83rem mt-14rem"/>
-      <MenuBar scrollTo={scrollTo}/>
     </div>
   );
 };

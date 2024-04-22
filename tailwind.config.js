@@ -31,7 +31,11 @@ export default {
         '40rem' : '40rem',
         '61.5rem' : '61.5rem',
         '83rem' : '83rem',
-        '14rem' : '14rem'
+        '14rem' : '14rem',
+        '37.5rem' : '37.5rem',
+        '30rem' : '30rem',
+        '45rem' : '45rem',
+        '58rem' : '58rem'
       },
       width: {
         '30rem' : '30rem',
@@ -41,7 +45,8 @@ export default {
         '665px' : '665px'
       },
       rotate: {
-        '25' : '25deg'
+        '25' : '25deg',
+        '135' : '135deg'
       },
     },
   },
