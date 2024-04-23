@@ -13,8 +13,8 @@ const LandingPage = () => {
     gsap.to(svgRef.current, {
       rotation: 360,
       duration: 15,
-      repeat: -1, // Repeat infinitely
-      ease: "linear", // Linear easing for smooth rotation
+      repeat: -1, 
+      ease: "linear",
     });
   }, []);
 

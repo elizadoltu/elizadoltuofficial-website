@@ -1,12 +1,12 @@
 import React from "react";
 import { gsap } from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin"; // Import ScrollToPlugin
+import { ScrollToPlugin } from "gsap/ScrollToPlugin"; 
 import LandingPage from "./pages/LandingPage";
 import MenuBar from "./components/Menu";
 import AboutPage from "./pages/AboutPage";
 import MyExpertise from "./pages/MyExpertise";
 
-gsap.registerPlugin(ScrollToPlugin); // Register ScrollToPlugin
+gsap.registerPlugin(ScrollToPlugin); 
 
 function App() {
   const scrollTo = (id) => {
