@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ProfilePhoto from "../assets/png/profile-picture-about.png";
 import svg1 from "../assets/svg/svg-1.png";
 
@@ -7,7 +8,8 @@ const AboutPage = () => {
   const paragraphRefs = useRef([]);
 
   useEffect(() => {
-    gsap.registerPlugin("scrollTrigger");
+    gsap.registerPlugin(ScrollTrigger);
+
     paragraphRefs.current.forEach((paragraph, index) => {
       gsap.from(paragraph, {
         opacity: 0,
@@ -15,8 +17,8 @@ const AboutPage = () => {
         duration: 1,
         scrollTrigger: {
           trigger: paragraph,
-          start: "top 50%", 
-          end: "bottom 80%", 
+          start: "top 50%",
+          end: "bottom 80%",
           toggleActions: "play none none reverse",
         },
       });
