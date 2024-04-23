@@ -15,8 +15,8 @@ const AboutPage = () => {
         duration: 1,
         scrollTrigger: {
           trigger: paragraph,
-          start: "top 80%", // Adjust this value based on when you want the animation to start
-          end: "bottom 80%", // Adjust this value based on when you want the animation to end
+          start: "top 50%", 
+          end: "bottom 80%", 
           toggleActions: "play none none reverse",
         },
       });
