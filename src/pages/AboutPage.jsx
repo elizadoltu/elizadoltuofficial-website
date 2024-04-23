@@ -6,8 +6,7 @@ import svg1 from "../assets/svg/svg-1.png";
 
 const AboutPage = () => {
   const paragraphRefs = useRef([]);
-  const titleRef = useRef(null);
-  const logoRef = useRef(null);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -26,8 +25,8 @@ const AboutPage = () => {
       });
     });
 
-    gsap.from([titleRef.current, logoRef.current], {
-      x: -100,
+    gsap.from(containerRef.current, {
+      x: -50,
       opacity: 0,
       duration: 1,
       delay: 0.5,
@@ -37,13 +36,14 @@ const AboutPage = () => {
   return (
     <section
       id="about-me-page"
-      className="w-full h-screen bg-background text-font font-urbanist relative"
+      className="w-full h-screen bg-background text-font font-urbanist"
     >
-      <div className="font-mera flex absolute items-center rotate-90 mt-40 ml-37.5rem">
-        <img ref={logoRef} src={svg1} alt="logo" />
-        <h2 ref={titleRef} className="text-7xl absolute ml-12">
-          ABOUT.
-        </h2>
+      <div
+        ref={containerRef}
+        className="font-mera flex absolute items-center rotate-90 mt-20rem ml-24rem"
+      >
+        <img src={svg1} alt="logo"/>
+        <h2 className="text-7xl -ml-16">ABOUT.</h2>
       </div>
       <div className="absolute w-40rem ml-64rem mt-32">
         <p ref={(el) => (paragraphRefs.current[0] = el)} className="text-4xl">
