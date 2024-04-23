@@ -17,7 +17,7 @@ const AboutPage = () => {
         duration: 1,
         scrollTrigger: {
           trigger: paragraph,
-          start: "top 50%",
+          start: index === 0 ? "top 50%" : "top 60%", 
           end: "bottom 80%",
           toggleActions: "play none none reverse",
         },
