@@ -23,8 +23,8 @@ This portfolio showcases my design journey and some of the projects I've worked 
 
 ## Fonts
 
-- [**Mera Pro**](https://font.download/font/mera-pro)(Available Only For Personal Use)
-- [**Urbanist**](https://fonts.google.com/specimen/Urbanist)(Open Source)
+- [**Mera Pro**](https://font.download/font/mera-pro)( Available Only For Personal Use)
+- [**Urbanist**](https://fonts.google.com/specimen/Urbanist)( Open Source)
 
 ## Color Palette
 
