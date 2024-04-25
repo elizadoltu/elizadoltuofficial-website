@@ -21,7 +21,6 @@ const Contact = () => {
         method="POST"
         netlify
         data-netlify="true"
-        action="src/pages/Submit.jsx"
       >
         <div className="flex justify-between mt-24">
           <div className="ml-28">
