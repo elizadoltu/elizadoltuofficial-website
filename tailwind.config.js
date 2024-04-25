@@ -21,6 +21,9 @@ export default {
         'urbanist': ['Urbanist', 'sans-serif'], 
         'mera': ['Mera Pro', 'sans-serif'] 
       },
+      fontSize: {
+        '10xl' : '200px'
+      },
       spacing: {
         '28rem' : '28rem',
         '20rem' : '20rem',
@@ -36,14 +39,16 @@ export default {
         '30rem' : '30rem',
         '45rem' : '45rem',
         '58rem' : '58rem',
-        '24rem' : '25rem'
+        '24rem' : '25rem',
+        '250' : '250px',
       },
       width: {
         '30rem' : '30rem',
         '445px' : '445px'
       },
       height: {
-        '665px' : '665px'
+        '665px' : '665px',
+        '1px' : '1px'
       },
       rotate: {
         '25' : '25deg',

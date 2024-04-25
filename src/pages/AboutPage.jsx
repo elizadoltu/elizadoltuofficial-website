@@ -60,7 +60,7 @@ const AboutPage = () => {
           enhance my skills with each project.
         </p>
       </div>
-      <div className="absolute w-35rem h-1 bg-white ml-64rem mt-30rem"> </div>
+      <div className="absolute w-35rem h-1px bg-white ml-64rem mt-30rem"> </div>
       <div className="absolute w-35rem ml-64rem mt-35rem">
         <p ref={(el) => (paragraphRefs.current[1] = el)} className="text-4xl">
           i believe that{" "}

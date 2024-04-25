@@ -3,3 +3,4 @@ User-agent: AdsBot-Google
 Disallow: /src/assets/
 Disallow: /src/fonts/
 Disallow: /src/styles/
+Disallow: /src/data/

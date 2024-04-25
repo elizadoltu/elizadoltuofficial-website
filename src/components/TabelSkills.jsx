@@ -9,7 +9,7 @@ const TabelSkills = () => {
             <h3>{skill}</h3>
             <span className="-rotate-135 text-xl font-black">&#8594;</span>
           </div>
-          <div className="opacity-60 w-32rem h-1 bg-white mt-8 mb-8"> </div>
+          <div className="opacity-60 w-32rem h-1px bg-white mt-8 mb-8"> </div>
         </div>
       ))}
     </div>
