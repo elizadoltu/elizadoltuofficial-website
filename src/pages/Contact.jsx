@@ -19,6 +19,7 @@ const Contact = () => {
       <form
         name="contact"
         method="POST"
+        netlify
         data-netlify="true"
         action="src/pages/Submit.jsx"
       >
