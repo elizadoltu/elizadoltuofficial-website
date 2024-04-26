@@ -45,11 +45,11 @@ function App() {
 
   useEffect(() => {
     if (!loading) {
-      // Logo animation
+      // Logo fade-in animation
       gsap.fromTo(
         logoRef.current,
-        { opacity: 0, y: 100 },
-        { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
+        { opacity: 0 },
+        { opacity: 1, duration: 1, ease: "power2.inOut" }
       );
     }
   }, [loading]);
@@ -79,6 +79,7 @@ function App() {
             src={OfficialLogo}
             alt="official logo website"
             className="w-52 h-52"
+            style={{ opacity: 0 }} // Initial opacity set to 0
           />
           <h1>Loading...</h1>
         </div>
