@@ -45,7 +45,6 @@ const Contact = () => {
         <form
           name="contact"
           method="post"
-          data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
         >
@@ -67,6 +66,7 @@ const Contact = () => {
                   className="bg-transparent border-b-2 w-35rem mt-5"
                   value={formData.name}
                   onChange={handleInputChange}
+                  required
                 />
               </div>
               <div className="mt-32">
@@ -83,6 +83,7 @@ const Contact = () => {
                   className="bg-transparent border-b-2 w-35rem mt-5"
                   value={formData.email}
                   onChange={handleInputChange}
+                  required
                 />
               </div>
             </div>
@@ -99,6 +100,7 @@ const Contact = () => {
                   className="bg-transparent border-b-2 w-35rem h-250"
                   value={formData.message}
                   onChange={handleInputChange}
+                  required
                 ></textarea>
                 <div>
                   <button
