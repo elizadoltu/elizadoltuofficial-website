@@ -16,7 +16,6 @@ const About = () => {
             duration: 1,
             delay: 0.5,
           });
-          paragraph1Observer.unobserve(paragraphRef1.current);
         }
       },
       { threshold: 0.5 }
@@ -31,7 +30,6 @@ const About = () => {
             duration: 1,
             delay: 0.5,
           });
-          paragraph2Observer.unobserve(paragraphRef2.current);
         }
       },
       { threshold: 0.5 }
