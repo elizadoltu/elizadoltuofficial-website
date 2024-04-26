@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import svg4 from "../assets/svg/svg-4.png";
 import contact from "../data/contactData.js";
 import ContactColumn from "../components/ContactTable";
 
@@ -21,8 +20,13 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    console.log(formData); // testing
     setSubmitted(true);
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
   };
 
   return (
@@ -37,72 +41,68 @@ const Contact = () => {
           thoughts, questions, and ideas are always welcome.
         </p>
       </div>
-      {!submitted ? ( 
+      {!submitted ? (
         <form
-          name="contact form"
+          name="contact"
           method="post"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
         >
-          <input type="hidden" name="form-name" value="contact form" />
+          <input type="hidden" name="form-name" value="contact" />
           <input type="hidden" name="bot-field" />
-
           <div className="flex justify-between mt-24">
             <div className="ml-28">
-              <p>
-                <label>
-                  <div>
-                    <p className="font-black text-2xl">name</p>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="ex: John Doe"
-                      className="bg-transparent border-b-2 w-35rem mt-5"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                    />
-                  </div>
+              <div>
+                <label htmlFor="name" className="font-black text-2xl">
+                  Name
                 </label>
-              </p>
-              <p className="mt-32">
-                <label className="w-20rem">
-                  <div>
-                    <p className="font-black text-2xl">email</p>
-                    <input
-                      type="text"
-                      name="email"
-                      placeholder="ex: john_doe@gmail.com"
-                      className="bg-transparent border-b-2 w-35rem mt-5"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                    />
-                  </div>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="ex: John Doe"
+                  className="bg-transparent border-b-2 w-35rem mt-5"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className="mt-32">
+                <label htmlFor="email" className="font-black text-2xl">
+                  Email
                 </label>
-              </p>
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  placeholder="ex: john_doe@gmail.com"
+                  className="bg-transparent border-b-2 w-35rem mt-5"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                />
+              </div>
             </div>
             <div className="mr-28">
-              <p>
-                <label>
-                  <div className="text-right">
-                    <p className="font-black text-2xl">message</p>
-                    <textarea
-                      name="message"
-                      className="bg-transparent border-b-2 w-35rem h-250"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                    ></textarea>
-                    <div>
-                      <button
-                        type="submit"
-                        className="border rounded-full px-7 py-1 text-2xl font-extralight"
-                      >
-                        Send
-                      </button>
-                    </div>
-                  </div>
+              <div>
+                <label htmlFor="message" className="font-black text-2xl">
+                  Message
                 </label>
-              </p>
+                <textarea
+                  id="message"
+                  name="message"
+                  className="bg-transparent border-b-2 w-35rem h-250"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                ></textarea>
+                <div>
+                  <button
+                    type="submit"
+                    className="border rounded-full px-7 py-1 text-2xl font-extralight"
+                  >
+                    Send
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </form>
