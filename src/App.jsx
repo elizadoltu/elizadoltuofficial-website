@@ -8,7 +8,7 @@ import MyExpertise from "./pages/MyExpertise";
 import MyWorks from "./pages/MyWorks";
 import Contact from "./pages/Contact";
 import About from "./pages/AboutNewPage";
-import OfficialLogo from "./assets/svg/official-logo.png";
+import OfficialLogo from "./assets/svg/official-logo.svg";
 
 gsap.registerPlugin(ScrollToPlugin);
 
