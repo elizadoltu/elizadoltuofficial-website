@@ -48,12 +48,11 @@ const Contact = () => {
           onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="contact" />
-          <input type="hidden" name="bot-field" />
           <div className="flex justify-between mt-24">
             <div className="ml-28">
               <div>
                 <div>
-                  <label htmlFor="name" className="font-black text-2xl">
+                  <label className="font-black text-2xl">
                     name
                   </label>
                 </div>
@@ -70,12 +69,12 @@ const Contact = () => {
               </div>
               <div className="mt-32">
                 <div>
-                  <label htmlFor="email" className="font-black text-2xl">
+                  <label className="font-black text-2xl">
                   Email
                 </label>
                 </div>
                 <input
-                  type="text"
+                  type="email"
                   id="email"
                   name="email"
                   placeholder="ex: john_doe@gmail.com"
@@ -87,7 +86,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="mr-28">
-              <div>
+              <div className="flex flex-col items-end">
                 <div>
                   <label htmlFor="message" className="font-black text-2xl">
                   Message
@@ -104,7 +103,7 @@ const Contact = () => {
                 <div>
                   <button
                     type="submit"
-                    className="border rounded-full px-7 py-1 text-2xl font-extralight"
+                    className="border rounded-full px-7 py-1 text-2xl font-extralight mt-4"
                   >
                     Send
                   </button>
