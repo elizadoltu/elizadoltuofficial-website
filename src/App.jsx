@@ -6,10 +6,11 @@ import OfficialLogo from "./assets/svg/official-logo.svg";
 import LandingPage from "./pages/LandingPage";
 import MenuBar from "./components/Menu";
 import AboutPage from "./pages/AboutPage";
-import MyExpertise from "./pages/MyExpertise";
+//import MyExpertise from "./pages/MyExpertise";
 import MyWorks from "./pages/MyWorks";
 import Contact from "./pages/Contact";
 import About from "./pages/AboutNewPage";
+import MyExpertise from "./pages/MyExpertiseNew";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -92,7 +93,7 @@ function App() {
 
   return (
     <>
-      <div className="app">
+      <div className="app bg-background">
         <div
           className={`w-full h-screen bg-background font-urbanist text-font flex flex-col justify-center items-center loading-screen ${
             loading ? "visible" : "hidden"

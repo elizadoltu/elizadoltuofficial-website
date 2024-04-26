@@ -47,12 +47,12 @@ const About = () => {
   return (
     <div
       id="about-me-page"
-      className="w-full h-screen bg-background text-font font-urbanist"
+      className="w-full bg-background text-font font-urbanist"
     >
       <div className="flex justify-center items-center overflow-hidden">
         <h1 className="font-mera text-15xl">ABOUT</h1>
       </div>
-      <div className="flex">
+      <div className="flex mb-40">
         <div className="flex flex-col justify-center px-10">
           <div className="flex items-center ml-10 w-fit">
             <div className="w-20 h-1px bg-font"> </div>
