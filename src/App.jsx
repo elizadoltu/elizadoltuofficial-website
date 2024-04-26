@@ -46,11 +46,11 @@ function App() {
   useEffect(() => {
     if (!loading) {
       // Logo fade-in animation
-      gsap.fromTo(
-        logoRef.current,
-        { opacity: 0 },
-        { opacity: 1, duration: 1, ease: "power2.inOut" }
-      );
+      gsap.to(logoRef.current, {
+        opacity: 1,
+        duration: 1,
+        ease: "power2.inOut",
+      });
     }
   }, [loading]);
 
