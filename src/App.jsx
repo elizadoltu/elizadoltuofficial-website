@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollToPlugin);
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const logoRef = useRef(null);
+  const loadingBarRef = useRef(null);
 
   useEffect(() => {
     // Simulate loading delay
@@ -45,10 +45,10 @@ function App() {
 
   useEffect(() => {
     if (!loading) {
-      // Logo fade-in animation
-      gsap.to(logoRef.current, {
-        opacity: 1,
-        duration: 1,
+      // Loading bar animation
+      gsap.to(loadingBarRef.current, {
+        width: "100%",
+        duration: 2, // Adjust the duration as needed
         ease: "power2.inOut",
       });
     }
@@ -74,12 +74,13 @@ function App() {
             loading ? "visible" : "hidden"
           }`}
         >
-          <img
-            ref={logoRef}
-            src={OfficialLogo}
-            alt="official logo website"
-            className="w-52 h-52"
-            style={{ opacity: 0 }} // Initial opacity set to 0
+          <div>
+            <img src={OfficialLogo} alt="official logo of the website" className="w-52 h-52"/>
+          </div>
+          <div
+            ref={loadingBarRef}
+            className="bg-primary h-2"
+            style={{ width: "0%" }} // Initial width set to 0%
           />
           <h1>Loading...</h1>
         </div>
