@@ -22,7 +22,8 @@ export default {
         'mera': ['Mera Pro', 'sans-serif'] 
       },
       fontSize: {
-        '10xl' : '200px'
+        '10xl' : '200px',
+        '15xl' : '350px'
       },
       spacing: {
         '28rem' : '28rem',

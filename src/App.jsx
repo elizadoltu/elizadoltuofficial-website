@@ -7,6 +7,7 @@ import AboutPage from "./pages/AboutPage";
 import MyExpertise from "./pages/MyExpertise";
 import MyWorks from "./pages/MyWorks";
 import Contact from "./pages/Contact";
+import About from "./pages/AboutNewPage";
 
 gsap.registerPlugin(ScrollToPlugin); 
 
@@ -26,7 +27,7 @@ function App() {
     <>
       <LandingPage />
       <MenuBar scrollTo={scrollTo} />
-      <AboutPage />
+      <About />
       <MyExpertise />
       <MyWorks />
       <Contact />
