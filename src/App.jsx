@@ -48,9 +48,6 @@ function App() {
     if (!loading) {
       // Start GSAP timeline animation
       tl.play();
-
-      // Start the loading bar animation
-      move();
     }
   }, [loading]);
 
@@ -80,25 +77,24 @@ function App() {
         stagger: { amount: 0.4 },
       });
 
+    // Start the loading bar animation
+    move();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  let width = 1;
-  let id;
-
   function move() {
-    id = setInterval(frame, 10);
-  }
-
-  function frame() {
-    if (width >= 100) {
-      clearInterval(id);
-      tl.play();
-    } else {
-      width++;
-      loadingBarRef.current.style.width = width + "%";
-      document.getElementById("percent").innerHTML = width + "%";
-    }
+    let width = 1;
+    const id = setInterval(() => {
+      if (width >= 100) {
+        clearInterval(id);
+        tl.play();
+      } else {
+        width++;
+        loadingBarRef.current.style.width = width + "%";
+        document.getElementById("percent").innerHTML = width + "%";
+      }
+    }, 10);
   }
 
   return (
