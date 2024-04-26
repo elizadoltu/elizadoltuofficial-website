@@ -1,7 +1,12 @@
 const contactData = [
   {
     name: "navigation",
-    links: ["home.", "about.", "works.", "contact."]
+    links: [
+      { label: "Home", id: "landing-page" },
+      { label: "About", id: "about-me-page" },
+      { label: "Works", id: "works-page" },
+      { label: "Contact", id: "contact-page" }
+    ]
   },
   {
     name: "socials",

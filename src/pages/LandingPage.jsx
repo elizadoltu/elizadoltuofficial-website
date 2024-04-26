@@ -19,7 +19,7 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className="bg-background min-h-screen text-font font-urbanist relative overflow-y-hidden">
+    <div id="landing-page" className="bg-background min-h-screen text-font font-urbanist relative overflow-y-hidden">
       <div className="flex items-center absolute text-font font-mera rotate-90 -ml-28rem mt-28rem text-3xl">
         <h3>WEB DEVELOPER &#160; &#160; WEB DESIGNER</h3>
       </div>

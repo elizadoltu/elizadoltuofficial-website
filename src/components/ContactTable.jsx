@@ -1,7 +1,22 @@
 import React from "react";
+import { gsap } from "gsap";
 import svg4 from "../assets/svg/svg-4.png";
 
 const ContactColumn = ({ name, links }) => {
+  const smoothScroll = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const yOffset = -50;
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      gsap.to(window, {
+        duration: 1,
+        scrollTo: { y: y, autoKill: false },
+        ease: "power2.inOut",
+      });
+    }
+  };
+
   return (
     <div className="flex flex-col font-urbanist text-font">
       <div className="flex items-center text-3xl font-black relative">
@@ -12,9 +27,12 @@ const ContactColumn = ({ name, links }) => {
       <div>
         {links.map((link, index) => (
           <div key={index} className="mb-2 text-2xl font-extralight">
-            {typeof link === "string" ? (
-              <a href={`/${link}`}>
-                {link}
+            {link.label === "Home" ||
+            link.label === "About" ||
+            link.label === "Works" ||
+            link.label === "Contact" ? (
+              <a href={`#${link.id}`} onClick={() => smoothScroll(link.id)}>
+                {link.label}
               </a>
             ) : (
               <a href={link.url} target="_blank">
