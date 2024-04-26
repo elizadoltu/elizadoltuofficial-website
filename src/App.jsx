@@ -8,34 +8,23 @@ import MyExpertise from "./pages/MyExpertise";
 import MyWorks from "./pages/MyWorks";
 import Contact from "./pages/Contact";
 import About from "./pages/AboutNewPage";
-import OfficialLogo from "./assets/svg/official-logo.svg";
+import OfficialLogo from "./assets/svg/official-logo.png";
 
 gsap.registerPlugin(ScrollToPlugin);
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const imageRef = useRef(null);
+  const logoRef = useRef(null);
 
   useEffect(() => {
     // Simulate loading delay
     const loadingTimer = setTimeout(() => {
       setLoading(false);
-    }, 3000); // Adjust the delay time as needed
+    }, 2000); // Adjust the delay time as needed
 
     // Cleanup function
     return () => clearTimeout(loadingTimer);
   }, []);
-
-  const scrollTo = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      gsap.to(window, {
-        duration: 1,
-        scrollTo: { y: section.offsetTop },
-        ease: "power2.inOut",
-      });
-    }
-  };
 
   useEffect(() => {
     // GSAP animations for loading screen transition
@@ -56,14 +45,25 @@ function App() {
 
   useEffect(() => {
     if (!loading) {
-      // Fade in animation for the image
+      // Logo animation
       gsap.fromTo(
-        imageRef.current,
-        { opacity: 0 },
-        { opacity: 1, duration: 0.5, delay: 0.5 }
+        logoRef.current,
+        { opacity: 0, y: 100 },
+        { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
       );
     }
   }, [loading]);
+
+  const scrollTo = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      gsap.to(window, {
+        duration: 1,
+        scrollTo: { y: section.offsetTop },
+        ease: "power2.inOut",
+      });
+    }
+  };
 
   return (
     <>
@@ -75,7 +75,7 @@ function App() {
           }`}
         >
           <img
-            ref={imageRef}
+            ref={logoRef}
             src={OfficialLogo}
             alt="official logo website"
             className="w-52 h-52"
