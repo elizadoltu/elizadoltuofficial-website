@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import svg4 from "../assets/svg/svg-4.png";
 
 const ContactColumn = ({ name, links }) => {
-  
+
   const smoothScroll = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -32,7 +32,7 @@ const ContactColumn = ({ name, links }) => {
             link.label === "About" ||
             link.label === "Works" ||
             link.label === "Contact" ? (
-              <div onClick={() => smoothScroll(link.id)}>
+              <div onClick={() => smoothScroll(link.id)} className="cursor-pointer">
                 {link.label}
               </div>
             ) : (
