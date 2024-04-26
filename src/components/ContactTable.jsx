@@ -17,7 +17,7 @@ const ContactColumn = ({ name, links }) => {
                 {link}
               </a>
             ) : (
-              <a href={link.url}>
+              <a href={link.url} target="_blank">
                 {link.label}
               </a>
             )}
