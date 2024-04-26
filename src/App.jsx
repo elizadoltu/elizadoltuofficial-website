@@ -18,17 +18,14 @@ function App() {
   const loadingBarRef = useRef(null);
 
   useEffect(() => {
-    // Simulate loading delay
     const loadingTimer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // Adjust the delay time as needed
+    }, 2000); 
 
-    // Cleanup function
     return () => clearTimeout(loadingTimer);
   }, []);
 
   useEffect(() => {
-    // GSAP animations for loading screen transition
     if (!loading) {
       gsap.to(".loading-screen", {
         opacity: 0,
@@ -46,7 +43,6 @@ function App() {
 
   useEffect(() => {
     if (!loading) {
-      // Start GSAP timeline animation
       tl.play();
     }
   }, [loading]);
@@ -65,7 +61,6 @@ function App() {
   const tl = gsap.timeline({ paused: true });
 
   useEffect(() => {
-    // GSAP animations
     tl.to("#percent, #bar", { duration: 0.2, opacity: 0, zIndex: -1 })
       .to("#preloader", { duration: 0.8, width: "0%" })
       .from(".container", { duration: 1.5, y: "-150%" }, "-=0.2")
@@ -77,10 +72,8 @@ function App() {
         stagger: { amount: 0.4 },
       });
 
-    // Start the loading bar animation
     move();
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function move() {
@@ -100,7 +93,6 @@ function App() {
   return (
     <>
       <div className="app">
-        {/* Loading screen */}
         <div
           className={`w-full h-screen bg-background font-urbanist text-font flex flex-col justify-center items-center loading-screen ${
             loading ? "visible" : "hidden"
@@ -116,14 +108,13 @@ function App() {
           <div
             id="preloader"
             className="bg-font h-2"
-            style={{ width: "0%" }} // Initial width set to 0%
+            style={{ width: "0%" }} 
           >
             <div id="percent">1%</div>
             <div id="bar" ref={loadingBarRef}></div>
           </div>
         </div>
 
-        {/* Actual content */}
         <div className={`content ${loading ? "hidden" : "visible"}`}>
           <LandingPage />
           <MenuBar scrollTo={scrollTo} />
