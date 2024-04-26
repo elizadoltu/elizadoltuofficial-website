@@ -17,11 +17,15 @@ const Contact = () => {
         </p>
       </div>
       <form
-        name="contact"
-        method="POST"
-        netlify
+        name="contact form"
+        method="post"
         data-netlify="true"
+        data-netlify-honeypot="bot-field"
       >
+        <input type="hidden" name="form-name" value="contact form" />
+        <input type="hidden" name="bot-field" />
+        <input type="hidden" name="redirect" value="Submit.jsx" />
+
         <div className="flex justify-between mt-24">
           <div className="ml-28">
             <p>
@@ -30,7 +34,7 @@ const Contact = () => {
                   <p className="font-black text-2xl">name</p>
                   <input
                     type="text"
-                    name="name"
+                    name="email"
                     placeholder="ex: John Doe"
                     className="bg-transparent border-b-2 w-35rem mt-5"
                   />
@@ -76,10 +80,7 @@ const Contact = () => {
       </form>
       <div className="flex justify-between mt-40 mr-28 ml-28">
         {contact.map((column) => (
-          <ContactColumn
-            name={column.name}
-            links={column.links}
-          />
+          <ContactColumn name={column.name} links={column.links} />
         ))}
       </div>
       <div className="font-mera text-10xl flex items-center justify-center -mb-24 opacity-10 font-extralight">
