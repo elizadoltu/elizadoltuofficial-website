@@ -54,9 +54,11 @@ const Contact = () => {
           <div className="flex justify-between mt-24">
             <div className="ml-28">
               <div>
-                <label htmlFor="name" className="font-black text-2xl">
-                  Name
-                </label>
+                <div>
+                  <label htmlFor="name" className="font-black text-2xl">
+                    name
+                  </label>
+                </div>
                 <input
                   type="text"
                   id="name"
@@ -68,9 +70,11 @@ const Contact = () => {
                 />
               </div>
               <div className="mt-32">
-                <label htmlFor="email" className="font-black text-2xl">
+                <div>
+                  <label htmlFor="email" className="font-black text-2xl">
                   Email
                 </label>
+                </div>
                 <input
                   type="text"
                   id="email"
@@ -84,9 +88,11 @@ const Contact = () => {
             </div>
             <div className="mr-28">
               <div>
-                <label htmlFor="message" className="font-black text-2xl">
+                <div>
+                  <label htmlFor="message" className="font-black text-2xl">
                   Message
                 </label>
+                </div>
                 <textarea
                   id="message"
                   name="message"
