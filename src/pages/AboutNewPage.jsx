@@ -7,18 +7,43 @@ const About = () => {
   const paragraphRef2 = useRef(null);
 
   useEffect(() => {
-    gsap.from(paragraphRef1.current, {
-      opacity: 0,
-      x: -50,
-      duration: 1,
-      delay: 0.5,
-    });
-    gsap.from(paragraphRef2.current, {
-      opacity: 0,
-      x: -50,
-      duration: 1,
-      delay: 1,
-    });
+    const paragraph1Observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          gsap.from(paragraphRef1.current, {
+            opacity: 0,
+            x: -50,
+            duration: 1,
+            delay: 0.5,
+          });
+          paragraph1Observer.unobserve(paragraphRef1.current);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    const paragraph2Observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          gsap.from(paragraphRef2.current, {
+            opacity: 0,
+            x: -50,
+            duration: 1,
+            delay: 0.5,
+          });
+          paragraph2Observer.unobserve(paragraphRef2.current);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    paragraph1Observer.observe(paragraphRef1.current);
+    paragraph2Observer.observe(paragraphRef2.current);
+
+    return () => {
+      paragraph1Observer.disconnect();
+      paragraph2Observer.disconnect();
+    };
   }, []);
 
   return (
