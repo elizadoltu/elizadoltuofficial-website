@@ -1,99 +1,83 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import CustomCursor from "../utils/CustomCursor";
 import profilePicture from "../assets/png/profile-picture-1.png";
-import { gsap } from "gsap";
+import { gsap } from "gsap"; // Import GSAP
 
 const LandingPage = ({ scrollTo }) => {
-  const cursorRef = useRef(null);
+  const [hovered, setHovered] = useState(null); // State to manage hover
+  const buttonRefs = useRef([]); // Ref to store button elements
 
   useEffect(() => {
-    const moveCursor = (e) => {
-      cursorRef.current.style.left = e.pageX + "px";
-      cursorRef.current.style.top = e.pageY + "px";
+    // Function to animate underline
+    const animateUnderline = (ref, isHovered) => {
+      gsap.to(ref, {
+        scaleX: isHovered ? 1 : 0, // ScaleX to 1 if hovered, otherwise 0
+        duration: 0.2,
+        ease: "power2.out",
+      });
     };
 
-    window.addEventListener("mousemove", moveCursor);
+    // Loop through buttonRefs to add event listeners
+    buttonRefs.current.forEach((button) => {
+      button.addEventListener("mouseenter", () => {
+        setHovered(button.id); // Set hovered state to button id
+        animateUnderline(button.querySelector(".underline"), true); // Animate underline
+      });
+      button.addEventListener("mouseleave", () => {
+        setHovered(null); // Reset hovered state
+        animateUnderline(button.querySelector(".underline"), false); // Animate underline
+      });
+    });
 
     return () => {
-      window.removeEventListener("mousemove", moveCursor);
+      // Cleanup: remove event listeners
+      buttonRefs.current.forEach((button) => {
+        button.removeEventListener("mouseenter", () => {});
+        button.removeEventListener("mouseleave", () => {});
+      });
     };
-  }, []);
-
-  const handleMouseEnter = (underline) => {
-    gsap.to(underline, {
-      scaleX: 1,
-      duration: 0.2,
-      ease: "power2.out",
-    });
-  };
-
-  const handleMouseLeave = (underline) => {
-    gsap.to(underline, {
-      scaleX: 0,
-      duration: 0.2,
-      ease: "power2.out",
-    });
-  };
+  }, []); // Run effect only on component mount
 
   return (
-    <div
-      id="landing-page"
-      className="w-full h-screen overflow-hidden bg-black font-urbanist text-font relative mb-20"
-    >
-      <CustomCursor ref={cursorRef} />
+    <div className="w-full h-screen overflow-hidden bg-black font-urbanist text-font relative mb-20">
+      <CustomCursor />
+      {/* Menu items */}
       <div className="flex flex-col justify-end items-end text-xl mt-10 mr-10">
+        {/* About */}
         <div
+          id="about"
+          className="menu-item cursor-pointer relative"
           onClick={() => scrollTo("about-me-page")}
-          className="cursor-pointer relative"
+          ref={(el) => (buttonRefs.current[0] = el)} // Store reference to button
         >
-          <span className="text-button">about.</span>
-          <div
-            className="underline absolute bottom-0 left-0 bg-white w-full h-0.5 transform origin-left scaleX-0"
-            onMouseEnter={() =>
-              handleMouseEnter(document.getElementById("about-underline"))
-            }
-            onMouseLeave={() =>
-              handleMouseLeave(document.getElementById("about-underline"))
-            }
-            id="about-underline"
-          ></div>{" "}
-          {/* Underline element */}
+          about.
+          {/* Underline */}
+          <div className="underline absolute bottom-0 left-0 bg-white w-full h-0.5 transform origin-left scaleX-0"></div>
         </div>
+        {/* Works */}
         <div
+          id="works"
+          className="menu-item cursor-pointer relative"
           onClick={() => scrollTo("works-page")}
-          className="cursor-pointer relative"
+          ref={(el) => (buttonRefs.current[1] = el)} // Store reference to button
         >
-          <span className="text-button">works.</span>
-          <div
-            className="underline absolute bottom-0 left-0 bg-white w-full h-0.5 transform origin-left scaleX-0"
-            onMouseEnter={() =>
-              handleMouseEnter(document.getElementById("works-underline"))
-            }
-            onMouseLeave={() =>
-              handleMouseLeave(document.getElementById("works-underline"))
-            }
-            id="works-underline"
-          ></div>{" "}
-          {/* Underline element */}
+          works.
+          {/* Underline */}
+          <div className="underline absolute bottom-0 left-0 bg-white w-full h-0.5 transform origin-left scaleX-0"></div>
         </div>
+        {/* Contact */}
         <div
+          id="contact"
+          className="menu-item cursor-pointer relative"
           onClick={() => scrollTo("contact-page")}
-          className="cursor-pointer relative"
+          ref={(el) => (buttonRefs.current[2] = el)} // Store reference to button
         >
-          <span className="text-button">contact.</span>
-          <div
-            className="underline absolute bottom-0 left-0 bg-white w-full h-0.5 transform origin-left scaleX-0"
-            onMouseEnter={() =>
-              handleMouseEnter(document.getElementById("contact-underline"))
-            }
-            onMouseLeave={() =>
-              handleMouseLeave(document.getElementById("contact-underline"))
-            }
-            id="contact-underline"
-          ></div>{" "}
-          {/* Underline element */}
+          contact.
+          {/* Underline */}
+          <div className="underline absolute bottom-0 left-0 bg-white w-full h-0.5 transform origin-left scaleX-0"></div>
         </div>
       </div>
+      {/* Rest of the content */}
       <div className="flex justify-start items-start mt-20">
         <h1 className="font-mera text-12xl -ml-14">ELIZA</h1>
       </div>
