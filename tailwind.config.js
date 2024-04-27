@@ -19,7 +19,8 @@ export default {
       },
       fontFamily: {
         'urbanist': ['Urbanist', 'sans-serif'], 
-        'mera': ['Mera Pro', 'sans-serif'] 
+        'mera': ['Mera Pro', 'sans-serif'],
+        'dmsans' : ['DM Sans', 'sans-serif']
       },
       fontSize: {
         '10xl' : '200px',
@@ -28,6 +29,7 @@ export default {
       },
       spacing: {
         '22rem' : '22rem',
+        '10rem' : '18rem',
         '28rem' : '28rem',
         '20rem' : '20rem',
         '35rem' : '35rem',

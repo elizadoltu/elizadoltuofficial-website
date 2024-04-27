@@ -20,15 +20,15 @@ const LandingPage = () => {
 
   return (
     <div id="landing-page" className="bg-background min-h-screen text-font font-urbanist relative overflow-y-hidden overflow-x-hidden">
-      <div className="flex items-center absolute text-font font-mera rotate-90 lg:-ml-28rem -ml-22rem mt-28rem lg:text-3xl text-2xl z-10">
+      <div className="flex items-center absolute text-font lg:font-mera font-black font-dmsans rotate-90 lg:-ml-28rem -ml-10rem mt-28rem lg:text-3xl text-4xl z-10">
         <h3>WEB DEVELOPER &#160; &#160; WEB DESIGNER</h3>
       </div>
       <div>
         <div className="flex justify-start items-center h-full absolute top-0 left-20 z-10">
           <img src={svg1} ref={svgRef} alt="svg logo" className="lg:mb-16 lg:ml-8 lg:h-auto lg:w-auto w-10 h-10 -ml-12" />
           <div className="font-mera flex justify-start items-center h-full absolute top-0 lg:left-20 -left-7">
-            <h2 className="lg:text-8xl text-3xl">ELIZADOLTU</h2>
-            <p className="lg:text-3xl text-sm lg:mb-20 mb-10 -ml-5 lg:ml-0">TM</p>
+            <h2 className="lg:text-8xl text-5xl lg:font-mera font-dmsans font-black">ELIZADOLTU</h2>
+            <p className="lg:text-3xl text-sm lg:mb-20 mb-12 lg:ml-0 lg:font-mera font-dmsans font-black">TM</p>
           </div>
           <p className="lg:text-3xl lg:w-30rem lg:mt-60 lg:-ml-16 text-xl -ml-5 mt-40 w-20rem">
             hi, there! my name is eliza and i am a student and frontend
