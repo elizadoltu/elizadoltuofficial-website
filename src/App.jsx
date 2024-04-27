@@ -3,14 +3,13 @@ import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import OfficialLogo from "./assets/svg/official-logo.svg";
 
-import LandingPage from "./pages/LandingPage";
 import MenuBar from "./components/Menu";
 import AboutPage from "./pages/AboutPage";
-//import MyExpertise from "./pages/MyExpertise";
 import MyWorks from "./pages/MyWorks";
 import Contact from "./pages/Contact";
 import About from "./pages/AboutNewPage";
 import MyExpertise from "./pages/MyExpertiseNew";
+import LandingPage from "./pages/LandingNewPage";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -92,9 +91,9 @@ function App() {
 
   return (
     <>
-      <div className="app bg-background" style={{ overflow: "hidden" }}>
+      <div className="app bg-black" style={{ overflow: "hidden" }}>
         <div
-          className={`w-full h-screen bg-background font-urbanist text-font flex flex-col justify-center items-center loading-screen ${
+          className={`w-full h-screen bg-black font-urbanist text-font flex flex-col justify-center items-center loading-screen ${
             loading ? "visible" : "hidden"
           }`}
         >
@@ -111,14 +110,16 @@ function App() {
           </div>
         </div>
 
-        <div className={`content ${loading ? "hidden" : "visible"}`}>
-          <LandingPage />
-          <MenuBar scrollTo={scrollTo} />
-          <About dataSpeed={0.5} />
-          <MyExpertise dataSpeed={0.7} />
-          <MyWorks dataSpeed={1} />
-          <Contact dataSpeed={0.8} />
-        </div>
+        {!loading && (
+          <div className="content">
+            <LandingPage scrollTo={scrollTo}/>
+            <MenuBar scrollTo={scrollTo} />
+            <About dataSpeed={0.5} />
+            <MyExpertise dataSpeed={0.7} />
+            <MyWorks dataSpeed={1} />
+            <Contact dataSpeed={0.8} />
+          </div>
+        )}
       </div>
     </>
   );

@@ -7,7 +7,7 @@ const MyWorks = () => {
   return (
     <div
       id="works-page"
-      className="w-full bg-background text-font font-urbanist overflow-x-hidden h-auto -z-10"
+      className="w-full bg-black text-font font-urbanist overflow-x-hidden h-auto -z-10"
     >
       <div className="flex justify-center mt-16">
         <h1 className="font-mera text-10xl">PORTFOLIO</h1>

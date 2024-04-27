@@ -4,7 +4,7 @@ import SkillsCard from "../components/SkillsCard";
 const MyExpertise = () => {
 
     return (
-      <div className="w-full bg-background text-font font-urbanist overflow-x-hidden overflow-y-hidden">
+      <div className="w-full bg-black text-font font-urbanist overflow-x-hidden overflow-y-hidden" id="expertise-page">
         <div className="flex">
           <h2 className="font-mera text-10xl">MY</h2>
           <div className="flex items-center">

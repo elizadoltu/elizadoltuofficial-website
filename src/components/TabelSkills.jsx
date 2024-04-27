@@ -2,7 +2,7 @@ import React from "react";
 
 const TabelSkills = ({ skills }) => {
   return (
-    <div className="w-45rem  bg-background mb-28">
+    <div className="w-45rem mb-28">
       {skills.map((skill) => (
         <div key={skill}>
           <div className="flex justify-between items-center text-font font-mera text-4xl ml-2 mb-4">

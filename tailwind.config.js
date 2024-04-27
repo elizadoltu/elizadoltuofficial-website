@@ -24,6 +24,7 @@ export default {
       },
       fontSize: {
         '10xl' : '200px',
+        '12xl' : '250px',
         '180' : '190px',
         '15xl' : '350px'
       },
@@ -36,6 +37,7 @@ export default {
         '26rem' : '26rem',
         '43rem' : '43rem',
         '64rem' : '64rem',
+        '65rem' : '65rem',
         '40rem' : '40rem',
         '61.5rem' : '61.5rem',
         '83rem' : '83rem',
