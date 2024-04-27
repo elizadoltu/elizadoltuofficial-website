@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     const loadingTimer = setTimeout(() => {
       setLoading(false);
-    }, 2000); 
+    }, 2000);
 
     return () => clearTimeout(loadingTimer);
   }, []);
@@ -74,7 +74,6 @@ function App() {
       });
 
     move();
-
   }, []);
 
   function move() {
@@ -93,7 +92,7 @@ function App() {
 
   return (
     <>
-      <div className="app bg-background">
+      <div className="app bg-background" style={{ overflow: "hidden" }}>
         <div
           className={`w-full h-screen bg-background font-urbanist text-font flex flex-col justify-center items-center loading-screen ${
             loading ? "visible" : "hidden"
@@ -106,11 +105,7 @@ function App() {
               className="lg:w-52 lg:h-52 w-40 h-40"
             />
           </div>
-          <div
-            id="preloader"
-            className="bg-font h-2"
-            style={{ width: "0%" }} 
-          >
+          <div id="preloader" className="bg-font h-2" style={{ width: "0%" }}>
             <div id="percent">1%</div>
             <div id="bar" ref={loadingBarRef}></div>
           </div>
@@ -119,10 +114,10 @@ function App() {
         <div className={`content ${loading ? "hidden" : "visible"}`}>
           <LandingPage />
           <MenuBar scrollTo={scrollTo} />
-          <About />
-          <MyExpertise />
-          <MyWorks />
-          <Contact />
+          <About dataSpeed={0.5} />
+          <MyExpertise dataSpeed={0.7} />
+          <MyWorks dataSpeed={1} />
+          <Contact dataSpeed={0.8} />
         </div>
       </div>
     </>
