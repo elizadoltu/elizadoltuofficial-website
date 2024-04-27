@@ -1,8 +1,33 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import svg6 from '../assets/svg/svg-6-portfolio.png';
+import gsap from "gsap";
 
 const WorkCard  = ({ index, name, picture, year, month, description, skills, link }) => {
 
+    const imageContainer = useRef(null);
+
+    useEffect(() => {
+
+      const imageContainerObserver = new IntersectionObserver (
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          gsap.from(imageContainer.current, {
+            opacity: 0,
+            x: -50,
+            duration: 1,
+            delay: 0.5,
+          });
+        }
+      },
+      { threshold: 0.5 }
+      );
+
+      imageContainerObserver.observe(imageContainer.current);
+
+      return () => {
+        imageContainerObserver.disconnect();
+      };
+    }, []);
     return (
       <div className="text-font font-urbanist flex h-screen mt-10 justify-between relative">
         <div className="flex flex-col text-right ml-72">
@@ -17,7 +42,7 @@ const WorkCard  = ({ index, name, picture, year, month, description, skills, lin
             ))}
           </div>
         </div>
-        <div>
+        <div ref={imageContainer}>
           <div className="absolute -rotate-90 mt-35rem -ml-9 font-extralight">
             <p>{year}</p>
           </div>
