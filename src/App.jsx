@@ -99,11 +99,11 @@ function App() {
             loading ? "visible" : "hidden"
           }`}
         >
-          <div>
+          <div className="flex justify-center items-center">
             <img
               src={OfficialLogo}
               alt="official logo of the website"
-              className="w-52 h-52"
+              className="lg:w-52 lg:h-52 w-40 h-40"
             />
           </div>
           <div

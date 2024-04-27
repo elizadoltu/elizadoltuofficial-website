@@ -27,6 +27,7 @@ export default {
         '15xl' : '350px'
       },
       spacing: {
+        '22rem' : '22rem',
         '28rem' : '28rem',
         '20rem' : '20rem',
         '35rem' : '35rem',
