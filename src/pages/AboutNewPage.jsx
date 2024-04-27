@@ -47,7 +47,7 @@ const About = () => {
   return (
     <div
       id="about-me-page"
-      className="w-full bg-background text-font font-urbanist"
+      className="w-full bg-black text-font font-urbanist"
     >
       <div className="flex justify-center items-center overflow-hidden">
         <h1 className="font-mera text-15xl">ABOUT</h1>

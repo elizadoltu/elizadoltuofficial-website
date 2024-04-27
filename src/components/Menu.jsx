@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 
 const MenuBar = ({ scrollTo }) => {
   const buttonRefs = useRef([]);
-  const [hideMenu, setHideMenu] = useState(false);
+  const [hideMenu, setHideMenu] = useState(true); 
 
   useEffect(() => {
     buttonRefs.current.forEach((button) => {
@@ -37,13 +37,21 @@ const MenuBar = ({ scrollTo }) => {
     });
 
     const handleScroll = () => {
-      const contactSection = document.getElementById("contact-page");
-      if (contactSection) {
-        const contactRect = contactSection.getBoundingClientRect();
-        if (contactRect.top < window.innerHeight && contactRect.bottom >= 0) {
-          setHideMenu(true);
+      const aboutSection = document.getElementById("about-me-page");
+      const worksSection = document.getElementById("works-page");
+      const expertiseSection = document.getElementById("expertise-page");
+      if (aboutSection || worksSection || expertiseSection) {
+        const aboutRect = aboutSection.getBoundingClientRect();
+        const worksRect = worksSection.getBoundingClientRect();
+        const expertiseRect = expertiseSection.getBoundingClientRect();
+        if (
+          (aboutRect.top < window.innerHeight && aboutRect.bottom >= 0) ||
+          (worksRect.top < window.innerHeight && worksRect.bottom >= 0) ||
+          (expertiseRect.top < window.innerHeight && expertiseRect.bottom >= 0)
+        ) {
+          setHideMenu(false); // Show the menu
         } else {
-          setHideMenu(false);
+          setHideMenu(true); // Hide the menu
         }
       }
     };
@@ -69,7 +77,7 @@ const MenuBar = ({ scrollTo }) => {
           <div
             key={idScroll}
             ref={(el) => buttonRefs.current.push(el)}
-            className="cursor-pointer flex justify-between items-center ml-5 mr-5 font-urbanist"
+            className="flex justify-between items-center ml-5 mr-5 font-urbanist"
             onClick={() => scrollTo(title[1])}
           >
             {title[0].split("").map((char, index) => (

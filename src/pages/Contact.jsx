@@ -33,7 +33,7 @@ const Contact = () => {
   return (
     <div
       id="contact-page"
-      className="w-full bg-background text-font font-urbanist overflow-x-hidden overflow-hidden"
+      className="w-full bg-black text-font font-urbanist overflow-x-hidden overflow-hidden"
     >
       <div className="text-3xl font-extralight mt-40">
         <div className="flex items-center justify-center">
