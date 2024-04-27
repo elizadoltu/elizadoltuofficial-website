@@ -1,7 +1,7 @@
 import React from "react";
 import svg6 from '../assets/svg/svg-6-portfolio.png';
 
-const WorkCard  = ({ index, name, picture, year, month, description, skills }) => {
+const WorkCard  = ({ index, name, picture, year, month, description, skills, link }) => {
 
     return (
       <div className="text-font font-urbanist flex h-screen mt-10 justify-between relative">
@@ -22,7 +22,10 @@ const WorkCard  = ({ index, name, picture, year, month, description, skills }) =
             <p>{year}</p>
           </div>
           <img src={svg6} alt="svg portfolio section" className="absolute z-0 -mt-12 -ml-12"/>
+            <a href={link} target="_blank"> 
           <img src={picture} alt="project photo" className="mr-72 z-10 relative" />
+          </a>
+         
           <div>
             <div className="flex items-center mt-2 -ml-6">
               <p className="mr-3"> &#169;</p>

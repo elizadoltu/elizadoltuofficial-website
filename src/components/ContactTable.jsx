@@ -24,7 +24,7 @@ const ContactColumn = ({ name, links }) => {
         <h3 className="z-10">{name}</h3>
         <img src={svg4} alt="logo svg" className="-ml-5" />
       </div>
-      <div className="h-1px w-32 bg-font mb-4"> </div>
+      <div className="h-1px w-52 bg-font mb-4"> </div>
       <div>
         {links.map((link, index) => (
           <div key={index} className="mb-2 text-2xl font-extralight">

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import contact from "../data/contactData.js";
 import ContactColumn from "../components/ContactTable";
+import contactSvg from '../assets/svg/contact-svg.svg';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -34,20 +35,50 @@ const Contact = () => {
       id="contact-page"
       className="w-full bg-background text-font font-urbanist overflow-x-hidden overflow-hidden"
     >
-      <div className="flex justify-center items-center text-3xl font-extralight text-left">
-        <h1 className="font-mera text-9xl -ml-16">CONTACT</h1>
-        <p className="ml-12 mt-12">
+      <div className="text-3xl font-extralight mt-40">
+        <div className="flex items-center justify-center">
+          <img src={contactSvg} alt="some svg" />
+          <h1 className="font-mera text-180 ml-4">CONTACT</h1>
+          <img src={contactSvg} alt="some svg" />
+        </div>
+      </div>
+      <div className="flex mt-20 ml-40 items-center">
+        <div className="h-1px w-20 bg-font"></div>
+        <p className="ml-4 mr-4 text-xl">get to know me</p>
+        <div className="h-1px w-20 bg-font"></div>
+      </div>
+      <div className="ml-40 mt-28 w-45rem">
+        <p className="text-2xl">
           Let's connect! Reach out and let the conversation begin. Your
           thoughts, questions, and ideas are always welcome.
         </p>
       </div>
-      {!submitted ? (
+      <div className="ml-40 mt-12 w-45rem">
+        <p className="text-2xl">
+          For freelance gigs, event collaborations, or networking opportunities,
+          get in touch with{" "}
+          <span className="font-black text-contact-page-blue">
+            Eliza - Teodora Doltu
+          </span>{" "}
+          at:
+        </p>
+        <div className="mt-5">
+          <a
+            href="mailto:elizadoltuofficial@gmail.com"
+            className="font-black text-font text-2xl"
+          >
+            elizadoltuofficial@gmail.com
+          </a>
+        </div>
+      </div>
+      {/* {!submitted ? (
         <form
           netlify
           name="contact"
           method="POST"
           action=""
           onSubmit={handleSubmit}
+          hidden
         >
           <input type="hidden" name="form-name" value="contact" />
           <div className="flex justify-between mt-24">
@@ -119,8 +150,8 @@ const Contact = () => {
           <h2 className="text-3xl font-semibold">Successfully sent!</h2>
           <p className="mt-4 text-lg">Thank you for your message.</p>
         </div>
-      )}
-      <div className="flex justify-between mt-40 mr-28 ml-28">
+      )} */}
+      <div className="flex justify-between mt-40 mr-40 ml-40">
         {contact.map((column) => (
           <ContactColumn
             key={column.name}

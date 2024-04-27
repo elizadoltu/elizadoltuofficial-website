@@ -29,6 +29,7 @@ const MyWorks = () => {
             month={work.month}
             description={work.description}
             skills={work.skills}
+            link={work.link}
           />
         ))}
       </div>

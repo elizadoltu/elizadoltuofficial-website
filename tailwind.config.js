@@ -23,6 +23,7 @@ export default {
       },
       fontSize: {
         '10xl' : '200px',
+        '180' : '190px',
         '15xl' : '350px'
       },
       spacing: {
