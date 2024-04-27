@@ -43,8 +43,9 @@ const Contact = () => {
       </div>
       {!submitted ? (
         <form
+          netlify
           name="contact"
-          method="post"
+          method="POST"
           onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="contact" />
