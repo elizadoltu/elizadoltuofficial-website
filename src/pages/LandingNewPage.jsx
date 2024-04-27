@@ -1,83 +1,74 @@
 import React, { useState, useEffect, useRef } from "react";
 import CustomCursor from "../utils/CustomCursor";
 import profilePicture from "../assets/png/profile-picture-1.png";
-import { gsap } from "gsap"; // Import GSAP
+import { gsap } from "gsap"; 
 
 const LandingPage = ({ scrollTo }) => {
-  const [hovered, setHovered] = useState(null); // State to manage hover
-  const buttonRefs = useRef([]); // Ref to store button elements
+  const [hovered, setHovered] = useState(null); 
+  const buttonRefs = useRef([]); 
 
   useEffect(() => {
-    // Function to animate underline
     const animateUnderline = (ref, isHovered) => {
       gsap.to(ref, {
-        scaleX: isHovered ? 1 : 0, // ScaleX to 1 if hovered, otherwise 0
+        scaleX: isHovered ? 1 : 0, 
         duration: 0.2,
         ease: "power2.out",
       });
     };
 
-    // Loop through buttonRefs to add event listeners
     buttonRefs.current.forEach((button) => {
+      animateUnderline(button.querySelector(".underline"), false);
+
       button.addEventListener("mouseenter", () => {
-        setHovered(button.id); // Set hovered state to button id
-        animateUnderline(button.querySelector(".underline"), true); // Animate underline
+        setHovered(button.id); 
+        animateUnderline(button.querySelector(".underline"), true); 
       });
       button.addEventListener("mouseleave", () => {
-        setHovered(null); // Reset hovered state
-        animateUnderline(button.querySelector(".underline"), false); // Animate underline
+        setHovered(null); 
+        animateUnderline(button.querySelector(".underline"), false); 
       });
     });
 
     return () => {
-      // Cleanup: remove event listeners
       buttonRefs.current.forEach((button) => {
         button.removeEventListener("mouseenter", () => {});
         button.removeEventListener("mouseleave", () => {});
       });
     };
-  }, []); // Run effect only on component mount
+  }, []); 
 
   return (
     <div className="w-full h-screen overflow-hidden bg-black font-urbanist text-font relative mb-20">
       <CustomCursor />
-      {/* Menu items */}
       <div className="flex flex-col justify-end items-end text-xl mt-10 mr-10">
-        {/* About */}
         <div
           id="about"
           className="menu-item cursor-pointer relative"
           onClick={() => scrollTo("about-me-page")}
-          ref={(el) => (buttonRefs.current[0] = el)} // Store reference to button
+          ref={(el) => (buttonRefs.current[0] = el)} 
         >
           about.
-          {/* Underline */}
           <div className="underline absolute bottom-0 left-0 bg-white w-full h-0.5 transform origin-left scaleX-0"></div>
         </div>
-        {/* Works */}
         <div
           id="works"
           className="menu-item cursor-pointer relative"
           onClick={() => scrollTo("works-page")}
-          ref={(el) => (buttonRefs.current[1] = el)} // Store reference to button
+          ref={(el) => (buttonRefs.current[1] = el)}
         >
           works.
-          {/* Underline */}
           <div className="underline absolute bottom-0 left-0 bg-white w-full h-0.5 transform origin-left scaleX-0"></div>
         </div>
-        {/* Contact */}
         <div
           id="contact"
           className="menu-item cursor-pointer relative"
           onClick={() => scrollTo("contact-page")}
-          ref={(el) => (buttonRefs.current[2] = el)} // Store reference to button
+          ref={(el) => (buttonRefs.current[2] = el)} 
         >
           contact.
-          {/* Underline */}
           <div className="underline absolute bottom-0 left-0 bg-white w-full h-0.5 transform origin-left scaleX-0"></div>
         </div>
       </div>
-      {/* Rest of the content */}
       <div className="flex justify-start items-start mt-20">
         <h1 className="font-mera text-12xl -ml-14">ELIZA</h1>
       </div>
