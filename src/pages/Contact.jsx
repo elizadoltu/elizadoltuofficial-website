@@ -46,6 +46,7 @@ const Contact = () => {
           netlify
           name="contact"
           method="POST"
+          action=""
           onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="contact" />
