@@ -38,7 +38,7 @@ const LandingPage = ({ scrollTo }) => {
   }, []); 
 
   return (
-    <div className="w-full h-screen overflow-hidden bg-black font-urbanist text-font relative mb-20">
+    <div className="w-full h-screen overflow-hidden bg-black font-urbanist text-font mb-20">
       <CustomCursor />
       <div className="flex flex-col justify-end items-end text-xl mt-10 mr-10">
         <div
@@ -70,7 +70,7 @@ const LandingPage = ({ scrollTo }) => {
         </div>
       </div>
       <div className="flex justify-start items-start mt-20">
-        <h1 className="font-mera text-12xl -ml-14">ELIZA</h1>
+        <h1 className="lg:font-mera font-dmsans lg:font-normal font-black lg:text-12xl -ml-14">ELIZA</h1>
       </div>
       <div className="flex justify-between items-start">
         <div className="flex justify-center items-center -mt-16 ml-32">
@@ -78,7 +78,7 @@ const LandingPage = ({ scrollTo }) => {
           <p className="ml-4 mr-4">web developer</p>
           <div className="h-1px w-20 bg-font"> </div>
         </div>
-        <h1 className="font-mera text-12xl -mt-44 -mr-32 z-10 mix-blend-difference">
+        <h1 className="lg:font-mera lg:text-12xl font-dmsans font-black lg:font-normal -mt-44 -mr-32 z-10 mix-blend-difference">
           DOLTU
         </h1>
       </div>
